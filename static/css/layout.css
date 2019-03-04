@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+body, html{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+.wrapper, .header{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.header{
+    width: 100vw;
+    height: 100vh;
+    background: #ffffff;
+    background-image: url('../img/home_hero.svg');
+    background-repeat: no-repeat;
+    background-size: 42%;
+    background-position: 91% 91%;
+}
+
+.nav{
+    padding-top: 9px;
+    width: 75vw;
+    justify-self: center;
+    display: grid;
+    height: 60px;
+    grid-template-columns: 2fr 10fr;
+}
+
+.name > img{
+    width: 41px;
+    height: 41px;
+    margin: 7px;
+}
+
+.menu > ul{
+    list-style-type: none;
+    width: auto;
+    float: right;
+}
+.menu > ul > li{
+    display: inline;
+    margin: 0px 3px;
+}
+
+a.btn{
+    text-decoration: none;
+    color: #111111;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 9px 17px;
+    transition: all 300ms ease-in-out;
+}
+
+a.btn:hover{
+    background: #2d22f2;
+    color: #ffffff;
+    padding: 9px 17px;
+    border-radius: 3px;
+}
+
+a.nohoverbtn{
+    text-decoration: none;
+    color: #111111;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 9px 17px;
+}
+
+a.btn.primary{
+    background: #2d22f2;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 9px 17px;
+}
+
+.hero-text{
+    width: 40vw;
+    margin-left: 13vw;
+    margin-bottom: 60px;
+}
+
+.hero-text > h1{
+    margin: 0px;
+    padding: 0px;
+    font-size: 4rem;
+    color: #111111;
+}
+
+.hero-text > p, .courses > .heading > p{
+    padding-top: 0px;
+    margin-top: 0px;
+    font-size: 1rem;
+}
+
+i.mobile{
+    display: none;
+}
+
+.courses{
+    width: 100vw;
+    display: grid;
+    background: #2d22f2;
+    padding: 43px;
+}
+
+.courses > .heading{
+    width: 50vw;
+    padding: 23px;
+    display: grid;
+    justify-self: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+.courses > .heading > h2{
+    margin: 0px;
+    padding: 0px;
+    font-size: 3rem;
+}
+
+.row{
+    display: grid;
+    width: 75vw;
+    justify-self: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.row .card{
+    background: #ffffff;
+    border-radius: 7px;
+    padding: 21px;
+    overflow: hidden;
+    box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.3);
+}
+
+.row .card > img{
+    width: 120%;
+    margin: -21px;
+}
+
+.row .card > .cta{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 11px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1222px){
+    .row{
+        grid-template-columns: 1fr 1fr;
+    }   
+}
+
+@media (max-width: 605px){
+    .nav{
+        width: 90vw;
+    }
+    ul.desktop{
+        display: none;
+    }
+    i.mobile{
+        cursor: pointer;
+        display: block;
+        font-size: 35px;
+        margin: 10px 3px;
+        float: right !important;
+    }
+    .header{
+        background-image: none;
+    }
+    .hero-text, .row, .courses > .heading{
+        width: 80vw;
+    }
+    .row .card{
+        padding: 7px;
+    }
+    .courses{
+        padding: 19px 0px;
+    }
+    .courses > .heading{
+        width: 100%;
+        padding: 0px;
+    }
+    .courses > .heading > h2{
+        font-size: 2rem;
+    }
+    .row{
+        grid-template-columns: 1fr;
+    }
+}

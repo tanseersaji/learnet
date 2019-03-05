@@ -1,14 +1,28 @@
+.mobile-menu
+    .close
+        <i class="fas fa-times closeMenu closeMenuButton mobile"></i>
+    ul
+        li.closeMenu
+            a.btn(href="#home") Home
+        li.closeMenu
+            a.btn(href="#courses") Courses
+        li.closeMenu
+            a.btn(href="#") About
+        li.closeMenu
+            a.btn.primary(href="#subscribe") Subscribe
+
 .nav
-    .name
-        img(src="img/logo.png", alt="Learnet")
-    .menu
-        <i class="mobile fas fa-bars"></i>
-        ul.desktop
-            li
-                a.btn(href="#") Home
-            li
-                a.btn(href="#") Courses
-            li
-                a.btn(href="#") About
-            li
-                a.btn.primary(href="#") Sign Up
+    .navcontainer
+        .name
+            img(src="img/logo.png", alt="Learnet")
+        .menu
+            <i class="mobile fas fa-bars openMenu"></i>
+            ul.desktop
+                li
+                    a.btn(href="#home") Home
+                li
+                    a.btn(href="#courses") Courses
+                li
+                    a.btn(href="#") About
+                li
+                    a.btn.primary(href="#subscribe") Subscribe

@@ -4,14 +4,25 @@ html(lang="en")
         include ./includes/head.pug
     body
         .wrapper
-            .header
+            .header#home
                 include ./includes/nav.pug
                 include ./includes/header.pug
             .banner
                 p Teaching the Skills of Tomorrow.
-            .courses
+            .courses#courses
                 .heading
                     h2 Most Popular Courses
                     p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequuntur quos culpa odit cum natus, quasi molestiae minus, iure, deleniti facere ipsa nemo debitis porro autem praesentium facilis optio ullam?
                 .row
                     include ./includes/course_cards.pug
+            .banner.wcu#subscribe
+                h1 Why choose us?
+                include ./includes/text_auto_type.pug
+            .subscribe
+                include ./includes/subscribe.html
+            .footer
+                .copyright
+                    p &copy; Learnet Education
+                .others
+                    
+            include ./includes/scripts.pug

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+doctype
 html(lang="en")
     head
         include ./includes/head.pug
@@ -26,3 +26,14 @@ html(lang="en")
                 .others
                     
             include ./includes/scripts.pug
+            script.
+                var typed = new Typed('#printReason',{
+                    stringsElement: '#reasons',
+                    typeSpeed: 20,
+                    backSpeed: 15,
+                    cursorChar: ' | ',
+                    backDelay: 1500,
+                    loop: true,
+                    loopCount: Infinity
+                });
+

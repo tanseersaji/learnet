@@ -240,6 +240,10 @@ i.mobile{
     justify-content: center;
 }
 
+.nobgimg{
+    background-image: none;
+}
+
 @media (max-width: 1024px){
     .row{
         grid-template-columns: 1fr 1fr;

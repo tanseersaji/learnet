@@ -9,6 +9,11 @@ app.get('/', function (req, res){
     console.log(req.ip+" "+req.method+" "+req.url);
 });
 
+app.get('/courses', function (req, res){
+    res.render('coursedetail');
+    console.log(req.ip+" "+req.method+" "+req.url);
+});
+
 var host = 'localhost';
 var port = 8000
 

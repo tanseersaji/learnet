@@ -1,17 +1,31 @@
 const Express = require('express');
+const Courses = require('./courseList');
 
 const app = Express()
 app.set('view engine', 'pug')
 app.use(Express.static('static'))
 
+function log(req){
+    console.log(Date()+" | "+req.ip+" | "+req.method+" | "+req.url);
+}
+
 app.get('/', function (req, res){
-    res.render('homepage');
-    console.log(req.ip+" "+req.method+" "+req.url);
+    res.render('homepage', {courses: Courses.coursesList});
+    log(req);
 });
 
 app.get('/courses', function (req, res){
-    res.render('coursedetail');
-    console.log(req.ip+" "+req.method+" "+req.url);
+    cid = req.query.id;
+    if (cid != undefined){
+        var course = Courses.coursesList[cid-1];
+        res.render('coursedetail', {topCourse: course});
+    } else {
+        res.render('coursedetail',{
+            topCourse: Courses.coursesList[0],
+            courses: Courses.coursesList.slice(1)
+        });
+    }
+    log(req);
 });
 
 var host = 'localhost';

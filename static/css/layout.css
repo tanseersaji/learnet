@@ -101,7 +101,7 @@ input.btn{
     display: block;
     position: relative;
     top: 50vh;
-    margin-top: -20vh;
+    margin-top: -17vh;
     width: 40vw;
     margin-left: 13vw;
 }
@@ -240,10 +240,6 @@ i.mobile{
     justify-content: center;
 }
 
-.nobgimg{
-    background-image: none;
-}
-
 @media (max-width: 1024px){
     .row{
         grid-template-columns: 1fr 1fr;
@@ -257,6 +253,7 @@ i.mobile{
 
     .show{
         display: grid;
+        z-index: 99999;
     }
     .mobile-menu > ul{
         width: 40vw;
@@ -281,6 +278,11 @@ i.mobile{
     .hero-text, .row, .courses > .heading{
         width: 80vw;
     }
+
+    .hero-text h1{
+        font-size: 2rem;
+    }
+
     .courses{
         padding: 19px 0px;
     }

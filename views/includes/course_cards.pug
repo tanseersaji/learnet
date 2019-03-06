@@ -1,24 +1,9 @@
-.card
-    img(src="img/thumb/c1.jpg", alt="Machine Learning")
-    .card-body
-        h2 Machine Learning
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, sit.
-        .cta
-            a.btn(href="#") Know More
-            a.btn.primary(href="#") Enroll
-.card
-    img(src="img/thumb/c1.jpg", alt="Machine Learning")
-    .card-body
-        h2 Neural Networks
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sapiente!
-        .cta
-            a.btn(href="#") Know More
-            a.btn.primary(href="#") Enroll
-.card
-    img(src="img/thumb/c1.jpg", alt="Machine Learning")
-    .card-body
-        h2 Python Basics
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sapiente!
-        .cta
-            a.btn(href="#") Know More
-            a.btn.primary(href="#") Enroll
+each course in courses
+    .card
+        img(src=course.thumbUrl, alt=course.name)
+        .card-body
+            h2 #{course.name}
+            p #{course.discription}
+            .cta
+                a.btn(href="/courses?id="+course.cid) Know More
+                a.btn.primary(href="/courses?id="+course.cid) Enroll

@@ -34,6 +34,6 @@ app.get('/courses', function (req, res){
 });
 
 var host = 'localhost';
-var port = 8000
+var port = 5000
 
 app.listen(port, host, () => console.log(`Server started at http://${host}:${port}`));

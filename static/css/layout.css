@@ -142,6 +142,7 @@ i.mobile{
     font-style: italic;
     padding: 79px 0px;
     text-align: center;
+    margin-top: 79px;
 }
 
 .wcu{
@@ -163,11 +164,7 @@ i.mobile{
     margin: 117px 0px;
 }
 
-.our-team > .img{
-    width: inherit;
-}
-
-.courses > .heading{
+.heading{
     width: 50vw;
     padding: 23px;
     display: grid;
@@ -176,7 +173,7 @@ i.mobile{
     text-align: center;
 }
 
-.courses > .heading > h2{
+.heading > h2{
     margin: 0px;
     padding: 0px;
     font-size: 3rem;
@@ -254,27 +251,40 @@ i.mobile{
     justify-content: center;
 }
 
+.our-team .img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 .our-team > .row{
-    width: 40vw;
+    width: 50vw;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
 }
 
 .our-team .hover-details{
+    cursor: pointer;
     position: absolute;
     display: flex;
+    opacity: 0;
     top: 0px;
     left: 0px;
     width: 100%;
     height: 100%;
     flex-direction: column;
-    background: rgba(0, 129, 214, 0.8);
+    background: rgba(0, 129, 214, 0.9);
     align-items: center;
     justify-content: center;
     color: #ffffff;
     text-align: center;
     font-size: 16px;
     font-weight: 700;
+    transition: all 300ms ease-in-out;
+}
+
+.our-team .hover-details:hover{
+    opacity: 1;
 }
 
 .our-team p.name{
@@ -293,6 +303,11 @@ i.mobile{
     width: 257px;
     height: 257px;
     border-radius: 50%;
+}
+
+.our-team i{
+    font-size: 25px;
+    margin: 3px;
 }
 
 @media (max-width: 1024px){
@@ -335,7 +350,7 @@ i.mobile{
         height: 80vh;
     }
 
-    .hero-text, .row,.our-team > .row, .courses > .heading{
+    .hero-text, .row,.our-team > .row{
         width: 80vw;
     }
 
@@ -343,12 +358,11 @@ i.mobile{
         font-size: 2rem;
     }
 
-    
-    .courses > .heading{
+    .heading{
         width: 90%;
         padding: 0px;
     }
-    .courses > .heading > h2{
+    .heading > h2{
         font-size: 2rem;
     }
     .row, .our-team > .row{

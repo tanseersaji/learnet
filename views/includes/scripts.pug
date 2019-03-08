@@ -1,3 +1,8 @@
+.footer
+    .copyright
+        p &copy; Learnet Education
+    .others
+
 script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
 script(src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9")
 
@@ -17,4 +22,12 @@ script.
                 behavior: 'smooth'
             });
         });
+    });
+
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 2){
+            $('.nav').addClass('pseudo-lift');
+        } else {
+            $('.nav').removeClass('pseudo-lift');
+        }
     });

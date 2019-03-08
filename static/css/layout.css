@@ -13,12 +13,14 @@ body, html{
 }
 .header{
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 74px);
     background: #ffffff;
     background-image: url('../img/home_hero.svg');
     background-repeat: no-repeat;
     background-size: 42%;
     background-position: 91% 91%;
+    position: relative;
+    top: 74px;
 }
 
 .nav{
@@ -27,6 +29,12 @@ body, html{
     position: fixed;
     width: 100vw;
     z-index: 999;
+    box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05); 
+    transition: all 200ms ease-in;
+}
+
+.pseudo-lift{
+    box-shadow: 0px 3px 3px -3px rgba(0, 0, 0, 0.6); 
 }
 
 .navcontainer{
@@ -68,6 +76,7 @@ body, html{
     text-align: center;
     padding: 9px 17px;
     transition: all 300ms ease-in-out;
+    width: 97px;
 }
 
 .btn:hover{
@@ -75,6 +84,7 @@ body, html{
     color: #ffffff;
     padding: 9px 17px;
     border-radius: 3px;
+
 }
 
 .btn.primary{
@@ -98,12 +108,12 @@ input.btn{
 }
 
 .hero-text{
-    display: block;
-    position: relative;
-    top: 50vh;
-    margin-top: -17vh;
+    display: flex;
     width: 40vw;
     margin-left: 13vw;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-text > h1{
@@ -146,11 +156,15 @@ i.mobile{
     margin: 7px 0px;
 }
 
-.courses{
+.courses, .our-team{
     width: 100vw;
     display: grid;
     background: #ffffff;
-    padding: 43px 0px;
+    margin: 117px 0px;
+}
+
+.our-team > .img{
+    width: inherit;
 }
 
 .courses > .heading{
@@ -240,6 +254,47 @@ i.mobile{
     justify-content: center;
 }
 
+.our-team > .row{
+    width: 40vw;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.our-team .hover-details{
+    position: absolute;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background: rgba(0, 129, 214, 0.8);
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.our-team p.name{
+    margin: 4px 0px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.our-team p.details{
+    margin: 0px;
+    font-weight: 400;
+    padding: 0px 9px;
+}
+
+.our-team .card{
+    position: relative;
+    width: 257px;
+    height: 257px;
+    border-radius: 50%;
+}
+
 @media (max-width: 1024px){
     .row{
         grid-template-columns: 1fr 1fr;
@@ -275,7 +330,12 @@ i.mobile{
     .header{
         background-image: none;
     }
-    .hero-text, .row, .courses > .heading{
+
+    .hero-text{
+        height: 80vh;
+    }
+
+    .hero-text, .row,.our-team > .row, .courses > .heading{
         width: 80vw;
     }
 
@@ -283,17 +343,15 @@ i.mobile{
         font-size: 2rem;
     }
 
-    .courses{
-        padding: 19px 0px;
-    }
+    
     .courses > .heading{
-        width: 100%;
+        width: 90%;
         padding: 0px;
     }
     .courses > .heading > h2{
         font-size: 2rem;
     }
-    .row{
+    .row, .our-team > .row{
         grid-template-columns: 1fr;
     }
     .footer{

@@ -14,6 +14,11 @@ app.get('/', function (req, res){
     log(req);
 });
 
+app.get('/about', function (req, res){
+    res.render('about');
+    log(req);
+});
+
 app.get('/courses', function (req, res){
     cid = req.query.id;
     if (cid != undefined){

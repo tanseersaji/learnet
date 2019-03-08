@@ -4,9 +4,12 @@ html(lang="en")
         include ./includes/head.pug
     body
         .wrapper
+            include ./includes/nav.pug
             .header#home
-                include ./includes/nav.pug
-                include ./includes/header.pug
+                .hero-text
+                    h1 Learnet
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique fuga nostrum laborum nesciunt expedita repellat incidunt provident maiores beatae. Modi distinctio sapiente ut fugiat voluptas exercitationem culpa sed soluta quisquam!
+                    a.btn.primary(href="#") Know More
             .banner
                 p Teaching the Skills of Tomorrow.
             .courses#courses
@@ -20,10 +23,6 @@ html(lang="en")
                 include ./includes/text_auto_type.pug
             .subscribe
                 include ./includes/subscribe.html
-            .footer
-                .copyright
-                    p &copy; Learnet Education
-                .others
                     
             include ./includes/scripts.pug
             script.

@@ -10,9 +10,7 @@ html(lang='en')
             .header{
                 background-image: url('img/ai_bg.svg');
             }
-            .hero-text{
-                margin-top: -15vh;
-            }
+
             .hero-text > h1{
                 font-size: 2rem;
                 margin: 9px 0px;
@@ -23,7 +21,6 @@ html(lang='en')
             @media (max-width: 676px){
                 .hero-text{
                     margin-left: 19px;
-                    margin-top: -23vh;
                 }
                 .header{
                     background-image: none;
@@ -31,8 +28,8 @@ html(lang='en')
             }
     body
         .wrapper
+            include ./includes/nav.pug
             .header
-                include ./includes/nav.pug
                 .hero-text
                     h1 #{topCourse.name}
                     p #{topCourse.discription}
@@ -49,9 +46,5 @@ html(lang='en')
         
         .subscribe#subscribe
             include ./includes/subscribe.html
-        .footer
-            .copyright
-                p &copy; Learnet Education
-            .others
                 
         include ./includes/scripts.pug

@@ -5,6 +5,7 @@ exports.coursesList = [
         thumbUrl: "img/thumb/c1.jpg",
         discription: "Learn industry ready Machine learning techniques with practical applications while understanding its core fundamentals.",
         price: 1000,
+        duration: 4,
         objective: "To introduce students to Machine learning fundamentals, techniques and tools required in devloping applications for modern day enterprises.",
         syllabus: [
             "Chapter 1 : Introduction to Machine Learning",
@@ -25,6 +26,7 @@ exports.coursesList = [
         name: "Neural Networks",
         thumbUrl: "img/thumb/c2.jpg",
         discription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequuntur quos culpa odit cum natus, quasi molestiae minus, iure, deleniti facere ipsa nemo debitis porro autem praesentium facilis optio ullam",
+        duration: 0,
         price: 1000,
         objective: "Coming Soon",
         syllabus: [
@@ -39,6 +41,7 @@ exports.coursesList = [
         name: "Python Basics",
         thumbUrl: "img/thumb/c3.jpg",
         discription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequuntur quos culpa odit cum natus, quasi molestiae minus, iure, deleniti facere ipsa nemo debitis porro autem praesentium facilis optio ullam",
+        duration: 0,
         price: 1000,
         objective: "Coming Soon",
         syllabus: [

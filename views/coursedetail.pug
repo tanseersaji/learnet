@@ -33,7 +33,7 @@ html(lang='en')
                 .hero-text
                     h1 #{topCourse.name}
                     p #{topCourse.discription}
-                    h3 Course duration : 4 Weeks
+                    h3 Course duration : #{topCourse.duration} Weeks
                     .cta
                         if courses == undefined
                             a.btn.primary(href="#subscribe") Subscribe

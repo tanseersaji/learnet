@@ -16,6 +16,7 @@ html(lang='en')
             }
             .hero-text > p{
                 margin: 19px 0px;
+                margin-bottom: 0px;
             }
             @media (max-width: 676px){
                 .hero-text{
@@ -32,6 +33,7 @@ html(lang='en')
                 .hero-text
                     h1 #{topCourse.name}
                     p #{topCourse.discription}
+                    h3 Course duration : 4 Weeks
                     .cta
                         if courses == undefined
                             a.btn.primary(href="#subscribe") Subscribe
@@ -55,9 +57,9 @@ html(lang='en')
                         for topic in topCourse.syllabus
                             li
                                 span= topic
-                    a.btn.primary(href=topCourse.detailedSyllabusLink) <i class="fas fa-file-download"></i> &nbsp; Detailed Syllabus
                 .outcomes
                     h2 What will you get?
+                    p After successful completion of this course the student will be able to :
                     ul.course-detail-list
                         for outcome in topCourse.outcomes
                             li

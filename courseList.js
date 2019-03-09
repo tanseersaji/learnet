@@ -3,18 +3,21 @@ exports.coursesList = [
         cid: 1,
         name: "Machine Learning (Basics)",
         thumbUrl: "img/thumb/c1.jpg",
-        discription: "Learn industry ready machine learning techniques with practical applications while understanding its core fundamentals.",
+        discription: "Learn industry ready Machine learning techniques with practical applications while understanding its core fundamentals.",
         price: 1000,
-        objective: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi inventore, soluta velit blanditiis, neque illum quam ullam eos eius enim consectetur voluptatum iusto ex delectus autem dolorum nobis ad nam.",
+        objective: "To introduce students to Machine learning fundamentals, techniques and tools required in devloping applications for modern day enterprises.",
         syllabus: [
-            "Chapter 1",
-            "Chapter 2",
-            "Chapter 3"
+            "Chapter 1 : Introduction to Machine Learning",
+            "Chapter 2 : Supervise vs Unsupervise Learning",
+            "Chapter 3 : Supervised learning and its applications",
+            "Chapter 4 : Data preprocessing and its importance",
+            "Chapter 5 : Machine learning tools in python",
+            "Chapter 6 : Unsupervised learning and its applications",
+            "Chapter 7 : Future scope of Machine Learning"
         ],
-        detailedSyllabusLink: "#",
         outcomes: [
-            "Outcome 1",
-            "Outcome 2",
+            "Solve real life problems using Machine learning techniques",
+            "Build applications using Machine learning tools",
         ]
     },
     {
@@ -27,7 +30,6 @@ exports.coursesList = [
         syllabus: [
             "Coming Soon"
         ],
-        detailedSyllabusLink: "#",
         outcomes: [
             "Coming Soon"
         ]
@@ -42,7 +44,6 @@ exports.coursesList = [
         syllabus: [
             "Coming Soon"
         ],
-        detailedSyllabusLink: "#",
         outcomes: [
             "Coming Soon"
         ]

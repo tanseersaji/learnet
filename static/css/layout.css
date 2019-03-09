@@ -13,14 +13,13 @@ body, html{
 }
 .header{
     width: 100vw;
-    height: calc(100vh - 74px);
+    height: calc(98vh);
     background: #ffffff;
     background-image: url('../img/home_hero.svg');
     background-repeat: no-repeat;
     background-size: 42%;
     background-position: 91% 91%;
-    position: relative;
-    top: 74px;
+
 }
 
 .nav{
@@ -161,7 +160,6 @@ i.mobile{
     width: 100vw;
     display: grid;
     background: #ffffff;
-    margin: 117px 0px;
 }
 
 .heading{
@@ -321,6 +319,40 @@ i.mobile{
     margin: 3px;
 }
 
+.course-detail{
+    display: grid;
+    position: relative;
+    width: 50vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    height: auto;
+    margin-left: 13vw;
+}
+
+.course-detail h2{
+    font-size: 1.5rem;
+    margin: 5px 0px;
+}
+
+.course-detail ul{
+    font-size: 15px;
+    margin: 5px 0px;
+    list-style-image: url('../img/tick.svg')
+}
+
+.course-detail li{
+    margin: 17px 0px;
+}
+.course-detail li span{
+    position: relative;
+    top: -13px;
+    left: 13px;
+}
+.course-detail p{
+    font-size: 15px;
+    margin: 5px 0px;
+}
+
 @media (max-width: 1024px){
     .row{
         grid-template-columns: 1fr 1fr;
@@ -356,6 +388,7 @@ i.mobile{
     }
     .header{
         background-image: none;
+        height: 80vh;
     }
 
     .hero-text{
@@ -394,6 +427,10 @@ i.mobile{
         position: absolute;
         top: 20px;
         right: 20px;
+    }
+    .course-detail{
+        width: 95vw;
+        margin-left: 3vw;
     }
     
 }

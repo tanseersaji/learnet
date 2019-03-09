@@ -4,46 +4,65 @@ html(lang='en')
         include ./includes/head.pug
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/brands.css" integrity="sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK" crossorigin="anonymous">
         style.
-            .subscribe{
-                background: #f5f5f5;
-                margin-top: 70px;
-            }
-            .hero-text{
-                height: 70vh;
-            }
+
             .header{
+                background-image: url('img/about_bg.svg');
+                height: 80vh;
+            }
+            .nobg{
                 background-image: none;
-                height: auto;
-                padding-bottom: 30px;
             }
             .our-team{
                 background: #f5f5f5;
                 padding-bottom: 40px;
-                margin: 25px 0px;
+                margin-top: 50px;
+                margin-bottom: 20px;
+            }
+            .courses{
+                margin: 0px;
+                position: relative;
             }
 
+            .courses .heading{
+                justify-self: start;
+                margin-left: 55px;
+            }
+
+            @media (max-width: 676px){
+                .header{
+                    background-image: none;
+                }
+            }
     body
         .wrapper
             include ./includes/nav.pug
             .header
                 .hero-text
-                    h1 About Us
-                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis exercitationem sequi dolore deserunt accusamus impedit error nihil illum! Sunt, expedita quo ipsum fugiat accusantium esse molestias alias corporis, molestiae, maxime omnis mollitia porro deserunt vero quasi quae dolor quaerat ad iste asperiores eligendi.
+                    h1 Learnet
+                    p We are a Delhi, India based startup teaching high-standard courses with indepth technical knowledge for engineering students to prepare them for the future with industry ready skills.
 
                     a.btn.primary(href="/course") Courses
 
-                .our-team
-                    .heading
-                        h2 Our Team
-                    .row
-                        include ./includes/team_cards.pug
-                    
+            .header.nobg
                 .hero-text
-                    h2 Why us?
-                    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe necessitatibus libero quas facilis ullam, repellendus enim, adipisci, amet ab at sit tempore vero ratione corporis possimus repellat? Est, dolorum accusantium ad laborum, eveniet beatae mollitia fuga distinctio qui, ex dolores asperiores ipsam commodi. Autem dignissimos corrupti eos. Qui, quos a.
-
+                    h1 Why us?
+                    p.
+                        We create all our courses <strong>keeping Indian Engineering Students in mind</strong> and try to fill the gap made by the outdated syllabus of most universities. <br/><br/>
+                        Our courses are <strond>practical</strong> and you will make <strong>at least 5 projects</strong> in each course which can be further expanded to an actual product. <br/><br/>
+                        We provide <strong>24*7 premium student assistance</strong> available all the time. If you have any questions relating to anything, do contact us, we will be happy to help you.<br/><br/>
+                        Our courses are <strong>fairly priced and affordable</strong> for any Indian Student.
+            .courses
+                //- Shows a list of other courses
+                .heading
                     h2 What are our services?
-                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .row
+                    include ./includes/course_cards.pug
+
+            .our-team
+                .heading
+                    h2 Our Team
+                .row
+                    include ./includes/team_cards.pug
 
             .subscribe#subscribe
                 include ./includes/subscribe.html

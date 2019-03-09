@@ -11,6 +11,7 @@ exports.coursesList = [
             "Chapter 2",
             "Chapter 3"
         ],
+        detailedSyllabusLink: "#",
         outcomes: [
             "Outcome 1",
             "Outcome 2",
@@ -26,6 +27,7 @@ exports.coursesList = [
         syllabus: [
             "Coming Soon"
         ],
+        detailedSyllabusLink: "#",
         outcomes: [
             "Coming Soon"
         ]
@@ -35,6 +37,14 @@ exports.coursesList = [
         name: "Python Basics",
         thumbUrl: "img/thumb/c3.jpg",
         discription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequuntur quos culpa odit cum natus, quasi molestiae minus, iure, deleniti facere ipsa nemo debitis porro autem praesentium facilis optio ullam",
-        price: 1000
+        price: 1000,
+        objective: "Coming Soon",
+        syllabus: [
+            "Coming Soon"
+        ],
+        detailedSyllabusLink: "#",
+        outcomes: [
+            "Coming Soon"
+        ]
     },
 ];;

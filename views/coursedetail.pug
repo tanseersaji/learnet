@@ -8,7 +8,7 @@ html(lang='en')
                 background: #f5f5f5;
             }
             .header{
-                background-image: url(#{topCourse.thumbUrl});
+                background-image: url('img/ai_bg.svg');
             }
 
             .hero-text > h1{
@@ -55,6 +55,7 @@ html(lang='en')
                         for topic in topCourse.syllabus
                             li
                                 span= topic
+                    a.btn.primary(href=topCourse.detailedSyllabusLink) <i class="fas fa-file-download"></i> &nbsp; Detailed Syllabus
                 .outcomes
                     h2 What will you get?
                     ul.course-detail-list

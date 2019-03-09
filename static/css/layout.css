@@ -327,6 +327,7 @@ i.mobile{
     grid-template-rows: auto auto auto;
     height: auto;
     margin-left: 13vw;
+    grid-row-gap: 17px;
 }
 
 .course-detail h2{

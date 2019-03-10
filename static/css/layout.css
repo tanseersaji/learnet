@@ -7,19 +7,21 @@ body, html{
     overflow-x: hidden;
 }
 
+
 .wrapper, .header{
     display: grid;
     grid-template-columns: 1fr;
 }
-.header{
+
+.header{ 
     width: 100vw;
-    height: calc(98vh);
+    height: auto;
+    min-height: 100vh;
     background: #ffffff;
     background-image: url('../img/home_hero.svg');
     background-repeat: no-repeat;
     background-size: 42%;
     background-position: 91% 91%;
-
 }
 
 .nav{
@@ -109,8 +111,8 @@ input.btn{
 .hero-text{
     display: flex;
     width: 40vw;
-    margin-left: 13vw;
     height: 100%;
+    margin-left: 13vw;
     flex-direction: column;
     justify-content: center;
 }
@@ -343,11 +345,13 @@ i.mobile{
 
 .course-detail li{
     margin: 17px 0px;
+    width: 95%;
 }
 .course-detail li span{
     position: relative;
     top: -13px;
     left: 13px;
+    word-wrap: break-word;
 }
 .course-detail p{
     font-size: 15px;

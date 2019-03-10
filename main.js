@@ -33,7 +33,12 @@ app.get('/courses', function (req, res){
     log(req);
 });
 
+
+app.get('*', function(req, res){
+    res.status(404).render('404')
+});
+
 var host = 'localhost';
-var port = 5000
+var port = 8000
 
 app.listen(port, host, () => console.log(`Server started at http://${host}:${port}`));

@@ -1,0 +1,23 @@
+doctype
+html(lang='en')
+    head
+        include ./includes/head.pug
+        style.
+            .header{
+                position: relative;
+                background-image: none;
+                display: flex;
+                hieght: calc(100vh - 74px);
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .header img{
+                width: 50vw;
+                position: relative;
+                top: 30px;
+            }
+    body
+            include ./includes/nav.pug
+            .header
+                img(src="/img/404.svg", alt="Page not found")

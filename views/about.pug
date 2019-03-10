@@ -7,7 +7,7 @@ html(lang='en')
 
             .header{
                 background-image: url('img/about_bg.svg');
-                height: 80vh;
+                height: auto;
             }
             .nobg{
                 background-image: none;
@@ -16,7 +16,6 @@ html(lang='en')
                 background: #f5f5f5;
                 padding-bottom: 40px;
                 margin-top: 50px;
-                margin-bottom: 20px;
             }
             .courses{
                 margin: 0px;
@@ -30,8 +29,11 @@ html(lang='en')
 
             @media (max-width: 676px){
                 .header{
-                    background-image: none;
+                    background-image: none;   
                 }
+                .courses .heading{
+                margin-left: 25px;
+            }
             }
     body
         .wrapper

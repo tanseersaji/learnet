@@ -15,6 +15,10 @@ html(lang='en')
             .hero-text > h1{
                 margin: 9px 0px;
             }
+            .banner{
+                padding:10px 0px;
+                margin-bottom:70px;
+            }
             .hero-text > p{
                 margin: 19px 0px;
                 margin-bottom: 0px;
@@ -48,6 +52,9 @@ html(lang='en')
                 .row
                     include ./includes/course_cards.pug
         else
+            .banner
+                h5 Certificate of Completion will be awarded.
+
             .course-detail
                 .objective
                     h2 Course Objective
@@ -58,6 +65,8 @@ html(lang='en')
                         for topic in topCourse.syllabus
                             li
                                 span= topic
+            
+            .course-detail    
                 .outcomes
                     h2 What will you get?
                     p After successful completion of this course the student will be able to :

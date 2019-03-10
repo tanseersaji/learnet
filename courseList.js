@@ -40,7 +40,7 @@ exports.coursesList = [
         cid: 3,
         name: "Python Basics",
         thumbUrl: "img/thumb/c3.jpg",
-        discription: "Learn the most liked and most versatile programming language in the modern era from zero to hero. Also learn to build and deploy RestAPIs in Python.",
+        discription: "Learn the most liked and most versatile programming language in the modern era from zero to hero.",
         duration: 0,
         price: 1000,
         objective: "Coming Soon",

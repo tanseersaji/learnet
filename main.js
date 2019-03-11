@@ -1,9 +1,17 @@
 const Express = require('express');
 const Courses = require('./courseList');
+const admin = require('firebase-admin');
 
 const app = Express()
 app.set('view engine', 'pug')
 app.use(Express.static('static'))
+
+var serviceAccount = require("./firebaseCred.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://learneteducation-44.firebaseio.com"
+});
 
 function log(req){
     console.log(Date()+" | "+req.ip+" | "+req.method+" | "+req.url);
@@ -33,6 +41,24 @@ app.get('/courses', function (req, res){
     log(req);
 });
 
+app.get('/auth', (req, res) => {
+    res.render('auth');
+    log(req)
+});
+app.get('/auth/_/:token', (req, res) => {
+    console.log(req.params.token);
+    var uid = req.params.token;
+    admin.auth().getUser(uid)
+    .then(function(userRecord) {
+        // See the UserRecord reference doc for the contents of userRecord.
+        console.log("Successfully fetched user data:", userRecord.toJSON());
+    })
+    .catch(function(error) {
+        console.log("Error fetching user data:", error);
+    });
+
+    res.send('Redirecting in 5 seconds');
+});
 
 app.get('*', function(req, res){
     res.status(404).render('404')

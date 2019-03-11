@@ -1,0 +1,38 @@
+doctype
+html(lang='en')
+    head
+        include ./includes/head.pug
+        title Learnet Authentication
+        style.
+            p{
+                font-size: 15px;
+            }
+    body
+        p redirecting in 5 seconds
+        button(onClick="googleAuth()") Authenticate with google
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script(src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js")
+        script.
+            var config = {
+                            apiKey: "AIzaSyApq_mQQtS9vtbR1gx6zs-NlIvu-ZEfhtE",
+                            authDomain: "learneteducation-44.firebaseapp.com",
+                            databaseURL: "https://learneteducation-44.firebaseio.com",
+                            projectId: "learneteducation-44",
+                            storageBucket: "learneteducation-44.appspot.com",
+                            messagingSenderId: "901520513086"
+                        };
+            firebase.initializeApp(config);
+            const provider = new firebase.auth.GoogleAuthProvider();
+            
+            function googleAuth(){
+                $('body').html = "Redirecting in 5 seconds";
+                firebase.auth().signInWithRedirect(provider);
+            }
+
+            firebase.auth().getRedirectResult().then(function(result) {
+                    if (result.credential){
+                        location.replace('/auth/_/'+result.user.uid);
+                    }
+                }).catch(function(error) {     
+            });

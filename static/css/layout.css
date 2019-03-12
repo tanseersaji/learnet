@@ -95,10 +95,11 @@ body, html{
     padding: 9px 17px;
 }
 
-input.btn{
+input.btn, button.btn{
     border: none;
     cursor: pointer;
     font-size: 0.85rem;
+    width: auto;
     margin: 0px 4px;
 }
 

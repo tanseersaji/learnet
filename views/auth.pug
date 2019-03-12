@@ -1,16 +1,10 @@
 doctype
 html(lang='en')
     head
-        include ./includes/head.pug
-        title Learnet Authentication
-        style.
-            p{
-                font-size: 15px;
-            }
+        meta(charset='utf-8')
+        title
     body
-        p redirecting in 5 seconds
-        button(onClick="googleAuth()") Authenticate with google
-
+        p redirecting in 5 seconds.
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
         script(src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js")
         script.
@@ -21,18 +15,16 @@ html(lang='en')
                             projectId: "learneteducation-44",
                             storageBucket: "learneteducation-44.appspot.com",
                             messagingSenderId: "901520513086"
-                        };
-            firebase.initializeApp(config);
-            const provider = new firebase.auth.GoogleAuthProvider();
-            
-            function googleAuth(){
-                $('body').html = "Redirecting in 5 seconds";
-                firebase.auth().signInWithRedirect(provider);
-            }
+                            };
+                firebase.initializeApp(config);
+                const provider = new firebase.auth.GoogleAuthProvider();
 
-            firebase.auth().getRedirectResult().then(function(result) {
-                    if (result.credential){
-                        location.replace('/auth/_/'+result.user.uid);
-                    }
-                }).catch(function(error) {     
-            });
+                firebase.auth().getRedirectResult().then(function(result) {
+                        if (result.credential){
+                            $('body').html("Redirecting in 5 seconds");
+                            location.replace('/auth/_/'+result.user.uid);
+                        } else {
+                            firebase.auth().signInWithRedirect(provider);
+                        }
+                    }).catch(function(error) {     
+                });

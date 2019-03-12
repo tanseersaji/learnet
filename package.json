@@ -1,6 +1,6 @@
 {
   "name": "learnet",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "description": "Learnet Education website",
   "main": "main.js",
   "scripts": {
@@ -10,8 +10,8 @@
   "author": "Learnet Education",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.4",
     "express": "^4.16.4",
-    "firebase": "^5.8.6",
     "firebase-admin": "^7.0.0",
     "pug": "^2.0.3",
     "uuid": "^3.3.2"

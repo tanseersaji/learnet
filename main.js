@@ -1,10 +1,12 @@
 const Express = require('express');
 const Courses = require('./courseList');
 const admin = require('firebase-admin');
+var cookieParser = require('cookie-parser');
 
 const app = Express()
 app.set('view engine', 'pug')
 app.use(Express.static('static'))
+app.use(cookieParser())
 
 var serviceAccount = require("./firebaseCred.json");
 
@@ -41,23 +43,46 @@ app.get('/courses', function (req, res){
     log(req);
 });
 
+app.get('/dashboard', (req, res) => {
+    log(req);
+    var uid = req.cookies.uid;
+    if (uid != undefined){
+        admin.auth().getUser(uid).then(function(user){
+            res.render('dashboard', {user: user});
+        }).catch(function(error){
+            console.log("Error: "+error)
+            res.redirect('/');
+        });
+    } else {
+        res.redirect('/');
+    }
+
+});
+
 app.get('/auth', (req, res) => {
+    if (req.cookies.uid != undefined){
+        res.redirect('/dashboard');
+    }
     res.render('auth');
     log(req)
 });
 app.get('/auth/_/:token', (req, res) => {
-    console.log(req.params.token);
     var uid = req.params.token;
     admin.auth().getUser(uid)
     .then(function(userRecord) {
-        // See the UserRecord reference doc for the contents of userRecord.
-        console.log("Successfully fetched user data:", userRecord.toJSON());
+        var expiryDate = new Date(Date.now() + 2592000000);
+        console.log(userRecord.uid+" logged in to portal.");
+        res.cookie("uid",userRecord.uid,{expires: expiryDate})
+        .redirect('/dashboard');
     })
     .catch(function(error) {
         console.log("Error fetching user data:", error);
+        res.redirect('/');
     });
+});
 
-    res.send('Redirecting in 5 seconds');
+app.get('/logout', (req, res) => {
+    res.clearCookie('uid').redirect('/');
 });
 
 app.get('*', function(req, res){

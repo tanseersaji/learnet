@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
-body, html{
+body{
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', sans-serif;
@@ -12,7 +12,9 @@ body, html{
     display: grid;
     grid-template-columns: 1fr;
 }
-
+.courses-container,.user-container{
+    margin-top: 60px;
+}
 .header{ 
     width: 100vw;
     height: auto;
@@ -48,7 +50,7 @@ body, html{
     grid-template-columns: 2fr 10fr;
 }
 
-.name > img{
+.name  img{
     width: 41px;
     height: 41px;
     margin: 7px;
@@ -358,7 +360,27 @@ i.mobile{
     font-size: 15px;
     margin: 5px 0px;
 }
+.user-nav-container{
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+}
+.username-container{
+    font-size: 25px;
+    justify-self: center;
+}
+.user-name{
+    color: #0081d6;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.user-heading{
+    text-align: center;
+    font-size: 25px;
+}
 @media (max-width: 1024px){
     .row{
         grid-template-columns: 1fr 1fr;

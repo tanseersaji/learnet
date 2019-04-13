@@ -1,0 +1,41 @@
+
+    <div class="wrapper">
+        {{> _nav}}
+        <div class="header" id="home">
+            <div class="hero-text">
+                <h1>Learnet</h1>
+                <p>Equipping and mentoring students with the skills required to participate in modern tech industry and potentially land a job or even build there own startup to create a change.</p><a class="btn primary" href="/about">Know More</a></div>
+        </div>
+        <div class="banner">
+            <p>Teaching the Skills of Tomorrow.</p>
+        </div>
+        <div class="courses" id="courses">
+            <div class="heading">
+                <h2>Most Popular Courses</h2>
+            </div>
+            <div class="row">
+                {{> _course_cards}}
+            </div>
+        </div>
+        <div class="banner wcu" id="subscribe">
+            <h1>Why choose us?</h1>
+            {{> _text_auto_type}}
+        </div>
+        <div class="subscribe">
+            {{> _subscribe}}
+            {{> _scripts}}
+
+        </div>
+        <script>
+            var typed = new Typed('#printReason', {
+                stringsElement: '#reasons',
+                typeSpeed: 20,
+                backSpeed: 15,
+                cursorChar: ' | ',
+                backDelay: 1500,
+                loop: true,
+                loopCount: Infinity
+            });
+        </script>
+    </div>
+

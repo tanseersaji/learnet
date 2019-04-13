@@ -1,0 +1,94 @@
+{{> _admin_nav}}
+    <div class="container mt-3 col-md-6 mx-auto mb-4">
+        <form action="/ln-admin/edit/course/{{course.id}}?_method=PUT" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="form-group">
+                <label for="courseTitle">Course Title</label>
+                <input type="text" class="form-control" id="courseTitle" 
+                name="title" placeholder="Enter Course Title" value= "{{course.title}}">
+            </div>
+            <div class="form-group">
+                <label for="cid">Course Id</label>
+                <input type="text" class="form-control" id="cid"  name="cid"
+                aria-describedby="courseId" placeholder="Course Id" value= "{{course.cid}}">
+                <small id="courseId" class="form-text text-muted" >Course Id Should be Unique.</small>
+            </div>
+            <div class="form-group">
+                <label for="courseDuration">Duration</label>
+                <input type="text" class="form-control" id="courseDuration" 
+                name="duration" placeholder="Enter Course Duration" value="{{course.duration}}">
+                
+            </div>
+             <div class="form-group">
+                <label for="prize">Prize</label>
+                <input type="text" name="prize" class="form-control" id="prize" 
+                aria-describedby="prize" placeholder="Amount " value={{course.prize}}>
+            </div>
+            <div class="form-group">
+                <label for="thumbUrl">Thumbnail Url</label>
+                <input type="text" name="thumbUrl" class="form-control" id="thumbUrl" 
+                aria-describedby="thumbUrl" placeholder="Image Url " value="{{course.thumbUrl}}">
+            </div>
+         <fieldset class="form-group">
+            <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Course Available</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="isPublic" id="isPublic1" value="true" checked>
+                <label class="form-check-label" for="isPublic1" value= "{{course.isPulic}}">
+                    Public
+                </label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="isPublic" id="isPublic2" value="false">
+                <label class="form-check-label" for="isPublic2" value= "{{course.isPublic}}">
+                    Editing
+                </label>
+                </div>
+            </div>
+            </div>
+        </fieldset>
+          <div class="form-group">
+                <label for="Course Description">Description</label>
+                <textarea class="form-control" id="Course Description" rows="3" name="description" >{{course.description}}</textarea>
+            </div> 
+            <div class="form-group">
+                <label for="Course Objective">Objective</label>
+                <textarea class="form-control" id="Course Objective" rows="3" name="objective">{{course.objective}}</textarea>
+            </div> 
+            <div class="form-group">
+                <label for="Course Outcome">Outcomes</label>
+                {{#each course.outcomes as |outcomeValue outcomeKey|}}  
+                    {{#if outcomeValue}}
+                        {{#each outcome as |outVal outKey|}}    
+                            <input class="form-control mb-1" id="Course Outcome" name="outcome" value="{{outVal}}"></input>
+                        {{/each}}
+                    {{/if}}
+                {{else}}
+                {{/each}}
+            </div>
+        
+            <button type="submit" class="btn btn-success btn-block">Update Course</button>
+            
+        </form>
+            
+        <div>
+            <form action="/ln-admin/course/delete/{{course.id}}?_method=DELETE" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-danger btn-block mt-2">Delete Course</button>
+            </form>
+        </div>
+    <div class="mt-3 mb-4">
+        <h3>Chapter List</h3>
+        {{#each chapter}}
+            <div class="card card-body  mt-1">
+                <p>{{chid}}</p>
+                <a href="/ln-admin/chapter/edit/{{_id}}"><h3>{{title}}</h3></a>
+            </div>
+        {{else}}
+            <p>No Chapter Right Now</p>
+        {{/each}}
+    </div> 
+    
+            <a href="/ln-admin/create-chapter/{{course._id}}" class="btn btn-primary btn-block">Add Chapters</a> 
+    </div>

@@ -1,0 +1,87 @@
+{{> _admin_nav}}
+<script>
+    window.onload()=>{
+        onChapterTypeSelect()
+    }
+</script>
+    <div class="container mt-3 col-md-6 mx-auto mb-4">
+        <form action="/ln-admin/chapter/edit/{{chapter.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="_method" value="PUT">
+            <div class="form-group">
+                <label for="chapterTitle">Chapter Title</label>
+                <input type="text" class="form-control" id="chapterTitle" 
+                name="title" placeholder="Enter Chapter Title" value="{{chapter.title}}">
+                
+            </div>
+            <div class="form-group">
+                <label for="chid">Chapter Id</label>
+                <input type="text" class="form-control" id="chid"  name="chid"
+                aria-describedby="chapterId" placeholder="Chapter  Id" value="{{chapter.chid}}">
+                <small id="Chapter Id" class="form-text text-muted">Chapter Id Should be Unique.</small>
+            </div>
+  <div class="form-group">
+            <label for="courseTypeSelect">Course Type</label>
+            <h5>{{chapter.chapterType}}</h5>
+        </div>
+             {{#each chapter.video as |videoValue videoKey|}}
+                {{#if videoValue}}
+                     <div id="evideoType">
+                    <div class="form-group">
+                    <label for="videoTitle">Video Title</label>
+                    <input type="text" name="videoTitle" class="form-control" id="videoTitle" 
+                    aria-describedby="videoTitle" placeholder="Enter Video Title " value="{{videoTitle}}">
+                </div> 
+                <div class="form-group">
+                    <label for="watchId">Video WatchId</label>
+                    <input type="text" name="watchId" class="form-control" id="watchId" 
+                    aria-describedby="watchId" placeholder="Enter Youtube watchId " value="{{watchId}}">
+                </div> 
+            </div>
+            {{/if}}
+            {{/each}}
+            {{#each chapter.quiz as |quizValue quizKey|}}
+                {{#if quizValue}}
+            <div id="equizType">
+             <div class="form-group">
+                    <label for="questionText">Quiz Question</label>
+                    <input type="text" name="questionText" class="form-control" id="questionText" 
+                    aria-describedby="questionText" placeholder="Enter Question for Quiz " value="{{questionText}}">
+                </div> 
+                
+                <div class="row">
+                {{#each options as |optVal optKey|}}
+                
+                    <div class="col-md-6">
+                      <div class="form-group">
+                            <label for="options">option {{optKey}}</label>
+                            <input type="text" name="options" class="form-control" id="options" 
+                            aria-describedby="options" placeholder="Option {{optKey}}" value="{{optVal}}">
+                        </div> 
+                    </div>
+               
+                {{/each}}  
+                 </div>               
+                  <div class="form-group">
+                            <label for="solution">Solution</label>
+                            <input type="text" name="solution" class="form-control" id="solution" 
+                            aria-describedby="solution" placeholder="Solution for  a Quiz " value="{{solution}}">
+                </div> 
+                
+            </div>
+            {{else}}
+            {{/if}}
+            {{else}}
+            {{/each}}
+
+          <div class="form-group">
+                <label for="Course Description">Description</label>
+                <textarea class="form-control" id="Course Description" rows="3" name="description">{{chapter.description}}</textarea>
+            </div> 
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </form>
+         <form action="/ln-admin/chapter/delete/{{chapter.id}}?_method=DELETE" method="POST">
+                 <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-danger btn-block mt-2">Delete</button>
+            </form>
+    </div>
+    

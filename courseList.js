@@ -1,9 +1,9 @@
 exports.coursesList = [
     {
         cid: 1,
-        name: "Machine Learning (Basics)",
+        title: "Machine Learning (Basics)",
         thumbUrl: "img/thumb/c1.jpg",
-        discription: "Learn industry ready Machine learning techniques with practical applications while understanding its core fundamentals.",
+        description: "Learn industry ready Machine learning techniques with practical applications while understanding its core fundamentals.",
         price: 1000,
         duration: 4,
         objective: "To introduce students to Machine learning fundamentals, techniques and tools required in devloping applications for modern day enterprises.",

@@ -1,0 +1,19 @@
+
+{{#each courses}}
+    <div class="card">
+        <img src="{{thumbUrl}}" alt="{{name}}">
+        <div class="card-body">
+            <h2>{{name}}</h2>
+            <p>{{description}}</p>
+            <div class="cta">
+                <a href="/course/{{_id}}" class="btn primary"> Know More</a>
+            </div>
+        </div>
+    </div>
+{{else }}   
+    
+    <div class="card">
+        <h3 style="text-align:center;">No course Available</h3>
+    </div>
+    
+{{/each}}

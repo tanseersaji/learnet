@@ -1,0 +1,97 @@
+{{> _admin_nav}}
+    <div class="container mt-3 col-md-6 mx-auto mb-4">
+        <form action="/ln-admin/create-course" method="POST">
+            <div class="form-group">
+                <label for="courseTitle">Course Title</label>
+                <input type="text" class="form-control" id="courseTitle" 
+                name="title" placeholder="Enter Course Title">
+                
+            </div>
+            <div class="form-group">
+                <label for="courseId">Course Id</label>
+                <input type="text" class="form-control" id="courseId"  name="cid"
+                aria-describedby="courseId" placeholder="Course Id">
+                <small id="courseId" class="form-text text-muted">Course Id Should be Unique.</small>
+            </div>
+            <div class="form-group">
+                <label for="courseDuration">Duration</label>
+                <input type="text" class="form-control" id="courseDuration" 
+                name="duration" placeholder="Enter Course Duration">
+                
+            </div>
+             <div class="form-group">
+                <label for="prize">Prize</label>
+                <input type="text" name="prize" class="form-control" id="prize" 
+                aria-describedby="prize" placeholder="Amount ">
+            </div>
+            <div class="form-group">
+                <label for="thumbUrl">Thumbnail Url</label>
+                <input type="text" name="thumbUrl" class="form-control" id="thumbUrl" 
+                aria-describedby="thumbUrl" placeholder="Image Url ">
+            </div>
+         <fieldset class="form-group">
+            <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Course Available</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="isPublic" id="isPublic1" value="true" checked>
+                <label class="form-check-label" for="isPublic1">
+                    Public
+                </label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="isPublic" id="isPublic2" value="false">
+                <label class="form-check-label" for="isPublic2">
+                    Editing
+                </label>
+                </div>
+            </div>
+            </div>
+        </fieldset>
+          <div class="form-group">
+                <label for="Course Description">Description</label>
+                <textarea class="form-control" id="Course Description" rows="3" name="description"></textarea>
+            </div> 
+            <div class="form-group">
+                <label for="Course Objective">Objective</label>
+                <textarea class="form-control" id="Course Objective" rows="3" name="objective"></textarea>
+            </div> 
+             <div class="form-inline">
+                <div class="form-group mb-2">
+                    <label for="outcomlabel" class="sr-only">Email</label>
+                    <input type="text" readonly class="form-control-plaintext" id="outcomlabel" value="Number of Outcomes">
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="num-of-outcome" class="sr-only">Number of Outcomes</label>
+                    <input type="text" class="form-control" id="num-of-outcome" placeholder="Number of Outcomes" value="1">
+                </div>
+                <button type="button" class="btn btn-primary mb-2" id="num-outcome-submit">Add Number of Outcomes</button>
+            </div>
+            <div class="form-group">
+                <label for="outcomes">Outcomes</label>
+                <ul id="course-outcomes" class="list-unstyled"></ul>
+            </div>
+        
+            <button type="submit" class="btn btn-primary btn-block">Save & Add Chapters</button>
+        </form>
+    </div>
+        <script>
+            let outcomeContainer = document.getElementById('course-outcomes');
+            let numberOfOutcomes = document.getElementById('num-of-outcome');
+            let outcomeINput = `<input class="form-control mb-1" id="outcomes" name="outcome"></input>`;
+            let numOutcomeSubmit = document.getElementById('num-outcome-submit');
+
+            numOutcomeSubmit.addEventListener('click',()=>{
+                  while (outcomeContainer.hasChildNodes()) {
+                outcomeContainer.removeChild(outcomeContainer.lastChild);
+            }
+                let i;
+                for(i=0; i<numberOfOutcomes.value; i++){ 
+                  
+                         outcomeContainer.innerHTML+=`<li><input class="form-control mb-1" id="outcomes" name="outcome"></input></li>`;
+                
+                }
+            })
+
+
+        </script>

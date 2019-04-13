@@ -1,0 +1,17 @@
+.course-card-img{
+    height: 250px;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    transition: all .2s ease-in-out;
+}
+#quizType{
+    display: none;
+}
+.student-email{
+    float: right;
+    text-align: right;
+}

@@ -1,0 +1,102 @@
+{{> _admin_nav}}
+    <div class="container mt-3 col-md-6 mx-auto mb-4">
+        <form action="/ln-admin/create-chapter/{{id}}" method="POST">
+            <div class="form-group">
+                <label for="chapterTitle">Chapter Title</label>
+                <input type="text" class="form-control" id="chapterTitle" 
+                name="title" placeholder="Enter Chapter Title">
+                
+            </div>
+            <div class="form-group">
+                <label for="chid">Chapter Id</label>
+                <input type="text" class="form-control" id="chid"  name="chid"
+                aria-describedby="chapterId" placeholder="Chapter  Id">
+                <small id="Chapter Id" class="form-text text-muted">Chapter Id Should be Unique.</small>
+            </div>
+          <div class="form-group">
+            <label for="courseTypeSelect">Course Type</label>
+            <select class="form-control" id="courseTypeSelect" name="chapterType">
+            <option value="Video">Video</option>
+            <option value="Quiz">Quiz</option>
+            </select>
+        </div>
+            <div id="videoType">
+                    <div class="form-group">
+                    <label for="videoTitle">Video Title</label>
+                    <input type="text" name="videoTitle" class="form-control" id="videoTitle" 
+                    aria-describedby="videoTitle" placeholder="Enter Video Title ">
+                </div> 
+                <div class="form-group">
+                    <label for="watchId">Video WatchId</label>
+                    <input type="text" name="watchId" class="form-control" id="watchId" 
+                    aria-describedby="watchId" placeholder="Enter Youtube watchId ">
+                </div> 
+            </div>
+            <div id="quizType">
+             <div class="form-group">
+                    <label for="questionText">Quiz Question</label>
+                    <input type="text" name="questionText" class="form-control" id="questionText" 
+                    aria-describedby="questionText" placeholder="Enter Question for Quiz ">
+                </div> 
+                <div class="row">
+                    <div class="col-md-6">
+                         <div class="form-group">
+                            <label for="options">option 1</label>
+                            <input type="text" name="options" class="form-control" id="options" 
+                            aria-describedby="options" placeholder="Option 1">
+                        </div> 
+                    </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                            <label for="options">option 2</label>
+                            <input type="text" name="options" class="form-control" id="options" 
+                            aria-describedby="options" placeholder="Option 2">
+                        </div> 
+                    </div>   
+                    <div class="col-md-6">
+                         <div class="form-group">
+                            <label for="options">option 3</label>
+                            <input type="text" name="options" class="form-control" id="options" 
+                            aria-describedby="options" placeholder="Option 3">
+                        </div> 
+                    </div>  
+                     <div class="col-md-6">
+                         <div class="form-group">
+                            <label for="options">option 4</label>
+                            <input type="text" name="options" class="form-control" id="options" 
+                            aria-describedby="options" placeholder="Option 4">
+                        </div> 
+                    </div>
+                </div>
+                  <div class="form-group">
+                            <label for="solution">Solution</label>
+                            <input type="text" name="solution" class="form-control" id="solution" 
+                            aria-describedby="solution" placeholder="Solution for  a Quiz ">
+                </div> 
+                
+            </div>
+            
+           
+          <div class="form-group">
+                <label for="Course Description">Description</label>
+                <textarea class="form-control" id="Course Description" rows="3" name="description"></textarea>
+            </div> 
+            <button type="submit" class="btn btn-primary btn-block">Save</button>
+        </form>
+    </div>
+    <script>
+        let select = document.getElementById('courseTypeSelect');
+        let videoInput = document.getElementById('videoType');
+        let quizInput = document.getElementById('quizType');
+        select.addEventListener('change',()=>{
+            if(select.value !== "Video"){
+                videoInput.style.display= 'none';
+                quizInput.style.display = 'block';
+            }
+            else{
+                videoInput.style.display = 'block';
+                quizInput.style.display ='none';
+            }
+        })
+      
+    </script>

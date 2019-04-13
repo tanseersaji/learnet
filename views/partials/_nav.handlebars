@@ -1,0 +1,52 @@
+<div class="mobile-menu">
+    <div class="close">
+          <i class="fas fa-times closeMenu closeMenuButton mobile"></i>
+    </div>
+     <ul>
+              <li class="closeMenu">
+                  <a href="/" class="btn">Home</a>
+              </li>
+              <li class="closeMenu">
+                  <a href="/courses" class="btn">Explore</a>
+                </li>
+              <li class="closeMenu">
+                  <a href="/about" class="btn">About</a>
+                </li>
+             {{#if userUid}}
+                 <li class="closeMenu">
+                  <a href="/dashboard" class="btn">Dashboard</a>
+                </li>
+             {{else}}
+              <li class="closeMenu">
+                  <a href="/auth" class="btn">Get Started</a>
+                </li>
+             {{/if}}
+          </ul>
+</div>
+<div class="nav">
+    <div class="navcontainer">
+        <div class="name">
+            <a href="/">
+                <img src="/img/logo.png" alt="Learnent">
+            </a>
+        </div>
+        <div class="menu">
+            
+            <i class="mobile fas fa-bars openMenu"></i>
+            <ul class="desktop">
+                <li><a href="/" class="btn">Home</a></li>
+                <li><a href="/courses" class="btn">Explore</a></li>
+                <li><a href="/about" class="btn">About</a></li> 
+                {{#if userUid}}
+                 <li class="closeMenu">
+                  <a href="/dashboard" class="btn">Dashboard</a>
+                 </li>
+                {{else}}
+                <li class="closeMenu">
+                    <a href="/auth" class="btn">Get Started</a>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</div>

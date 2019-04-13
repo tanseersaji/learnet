@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/brands.css" integrity="sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK" crossorigin="anonymous">
+    <style>
+        .header {
+            background-image: url('img/about_bg.svg');
+            height: auto;
+        }
+
+        .nobg {
+            background-image: none;
+        }
+
+        .our-team {
+            background: #f5f5f5;
+            padding-bottom: 40px;
+            margin-top: 50px;
+        }
+
+        .courses {
+            margin: 0px;
+            position: relative;
+        }
+
+        .courses .heading {
+            justify-self: start;
+            margin-left: 55px;
+        }
+
+        @media (max-width: 676px) {
+            .courses .heading {
+                margin-left: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        {{> _nav}}
+        <div class="header">
+            <div class="hero-text">
+                <h1>Learnet</h1>
+                <p>We are a Delhi, India based startup teaching high-standard courses with indepth technical knowledge for engineering students to prepare them for the future with industry ready skills.</p><a class="btn primary" href="/courses">Courses</a></div>
+        </div>
+        <div class="header nobg">
+            <div class="hero-text">
+                <h1>Why us?</h1>
+                <p>We create all our courses <strong>keeping Indian Engineering Students in mind</strong> and try to fill the gap made by the outdated syllabus of most universities. <br/><br/> Our courses are
+                    <strond>practical</strong> and you will make <strong>at least 5 projects</strong> in each course which can be further expanded to an actual product. <br/><br/> We provide <strong>24*7 premium student assistance</strong> available all the time.
+                        If you have any questions relating to anything, do contact us, we will be happy to help you.<br/><br/> Our courses are <strong>fairly priced and affordable</strong> for any Indian Student.</p>
+            </div>
+        </div>
+        <div class="courses">
+            <div class="heading">
+                <h2>What are our services?</h2>
+            </div>
+            <div class="row">
+                {{> _course_cards}}
+            </div>
+        </div>
+        <div class="our-team">
+            <div class="heading">
+                <h2>Our Team</h2>
+            </div>
+            <div class="row">
+                {{> _team_cards}}
+            </div>
+        </div>
+        <div class="subscribe" id="subscribe">
+            {{> _subscribe}}
+            {{> _scripts}}
+        </div>
+    </div>
+</body>
+
+</html>
